@@ -5,7 +5,16 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+import postRouter from './routes/posts.js';
+
 const app = express();
+
+
+//-----------------------------
+//------ MIDDLEWARES ----------
+//-----------------------------
+
+app.use('/posts', postRouter);
 
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));

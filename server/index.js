@@ -13,12 +13,11 @@ const app = express();
 //-----------------------------
 //------ MIDDLEWARES ----------
 //-----------------------------
-
-app.use('/posts', postRouter);
-
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+app.use('/posts', postRouter);
 
 const CONNECTION = process.env.CONNECTION_URL; 
 const PORT = process.env.PORT || 5000;
